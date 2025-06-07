@@ -14,6 +14,7 @@ private:
 	void freeDynamic()
 	{
 		delete[] this->arr;
+		this->arr = nullptr;
 	}
 
 	void resize()
@@ -92,7 +93,7 @@ public:
 
 	void remove(const size_t index)
 	{
-		if (this->index >= this->size_arr)
+		if (index >= this->size_arr)
 		{
 			throw std::out_of_range("Index out of bounds");
 		}

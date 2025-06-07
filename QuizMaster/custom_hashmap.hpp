@@ -13,6 +13,8 @@ private:
 	{
 		delete[] keys;
 		delete[] values;
+		keys = nullptr;
+		values = nullptr;
 	}
 
 	void resize()
@@ -71,6 +73,7 @@ public:
 		return this->keys;
 	}
 
+	//Throws std::invalid_argument
 	V& getValue(const K& key)
 	{
 		size_t index = 0;
@@ -102,6 +105,7 @@ public:
 		this->size_map++;
 	}
 	
+	//throws std::invalid_argument
 	void remove(const K& key)
 	{
 		size_t index = 0;

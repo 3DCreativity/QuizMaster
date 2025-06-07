@@ -1,8 +1,10 @@
 #include "custom_string.h"
+#include <string.h>
 
 void custom_string::freeDynamic()
 {
 	delete[] arr;
+	arr = nullptr;
 }
 
 void custom_string::copyFrom(const custom_string& other)
@@ -13,7 +15,8 @@ void custom_string::copyFrom(const custom_string& other)
 	}
 	size_t length = strlen(other.arr);
 	arr = new char[length + 1];
-	strcpy_s(arr, length + 1, other.arr);
+	strncpy(arr,other.arr,length+1); // -> Linux
+	// strcpy_s(arr, length + 1, other.arr); //-> Windows
 }
 
 custom_string::custom_string()
@@ -65,7 +68,8 @@ custom_string::custom_string(const char* prov_string)
 	{
 		size_t length = strlen(prov_string);
 		arr = new char[length + 1];
-		strcpy_s(arr, length + 1, prov_string);
+		strncpy(arr,prov_string,length+1); // -> Linux
+		// strcpy_s(arr, length + 1, prov_string); // -> Windows
 	}
 }
 
@@ -225,8 +229,10 @@ custom_string& custom_string::operator+=(const custom_string& other)
 	
 	arr_mod[0] = '\0';
 
-	strcat_s(arr_mod, length + 1, arr);
-	strcat_s(arr_mod, length + 1, other.arr);
+	strncat(arr_mod,arr,length+1); // -> Linux
+	strncat(arr_mod,other.arr,length+1); // -> Linux
+	// strcat_s(arr_mod, length + 1, arr); // -> Windows
+	// strcat_s(arr_mod, length + 1, other.arr); // -> Windows
 
 	freeDynamic();
 	arr = arr_mod;
@@ -253,7 +259,8 @@ istream& operator>>(istream& in, custom_string& str)
 	str.freeDynamic();
 	str.arr = new char[buffer_length + 1];
 
-	strcpy_s(str.arr, buffer_length + 1, buffer);
+	strncpy(str.arr,buffer,buffer_length+1); // -> Linux
+	// strcpy_s(str.arr, buffer_length + 1, buffer); // -> Windows
 
 	return in;
 }

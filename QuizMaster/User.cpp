@@ -2,18 +2,22 @@
 #include "Console.h"
 #include "UserType.h"
 #include "custom_vector.hpp"
+#include "NormalExit.hpp"
 #include <memory>
 #include <exception>
+
+User* User::instance = nullptr;
 
 void User::login()
 {
 }
 
 void User::setCommandList() {
-
+	this->command_list.add("help",&User::help);
+	this->command_list.add("quit",&User::quit);
 }
 
-User& User::currentUser()
+User& User::getInstance()
 {
 	if (User::instance == nullptr)
 	{
@@ -31,11 +35,11 @@ bool User::isUserDefined()
 	return true;
 }
 
-User::User(): role(UserType::Unknown),name("Undefined"),id(-1),password("") {
+User::User(): role(UserType::Unknown),name("Undefined"),username("unknown"),password("") {
 	setCommandList();
 }
 
-User::User(size_t id, UserType role, custom_string name, custom_string password) : role(role),name(name),id(id) {
+User::User(custom_string username, UserType role, custom_string name, custom_string password) : role(role),name(name),username(username) {
 	setCommandList();
 	//Check password with regex
 }
@@ -46,9 +50,9 @@ UserType User::getRole()
 	return this->role;
 }
 
-size_t User::getID()
+custom_string User::getUsername()
 {
-	return this->id;
+	return this->username;
 }
 
 custom_string User::getName()
@@ -64,26 +68,18 @@ void User::command(custom_string input)
 		Console::displayMessage("Invalid command context was passed\nNot a valid command: " + input + "\n");
 		return;
 	}
-	switch (this->command_list.findFirstMatch(input))
+	try{
+		(this->*this->command_list.getValue(input))();
+	}
+	catch(std::invalid_argument)
 	{
-	case 0:
-		help();
-		break;
-	case 1:
-		login();
-		break;
-	case 2:
-		logout();
-		break;
-	default:
-		Console::displayMessage("Invalid command: \'" + input + "\'\n");
-		break;
+		Console::displayMessage("Invalid command\nFor more info on available commands, please use command\nhelp");
 	}
 }
 
 void User::help()
 {
-
+	Console::displayMessage("No commands are currently available\nSorry ;)");
 }
 
 void User::change_password()
@@ -114,21 +110,6 @@ void User::change_password()
 }
 
 //Old code - integrate Visitor pattern across the File Manager. Keep passwords safe, even at base level
-custom_string User::exportUser()
-{
-	custom_string result;
-	custom_string id_text;
-	size_t id_copy = this->id;
-	while (id_copy != 0)
-	{
-		id_text += (char)('0' + id_copy % 10);
-		id_copy /= 10;
-	}
-	result += id_text + " ";
-	result += (char)('0' + (int)role) + " ";
-	result += name + " " + password + "\n";
-	return result;
-}
 
 void User::logout()
 {
@@ -137,4 +118,14 @@ void User::logout()
 		throw new std::exception();
 	}
 	User::instance = nullptr;
+}
+
+void User::exportUser(FileManager manager)
+{
+	//Do nothing
+}
+
+void User::quit()
+{
+	throw NormalExit("Quitting program...");
 }

@@ -11,6 +11,10 @@
 //	
 //}
 
+custom_string Console::input = "";
+custom_vector<custom_string> Console::buffer;
+
+
 void Console::freeBuffer()
 {
 	while (buffer.getSize() > 0)
@@ -32,6 +36,14 @@ custom_string Console::prompt(custom_string message)
 	return input;
 }
 
+custom_string Console::prompt_ignore_buffer(custom_string message)
+{
+	custom_string input;
+	std::cout << message;
+	std::cin >> input;
+	return input;
+}
+
 void Console::displayMessage(custom_string message)
 {
 	std::cout << message << std::endl;
@@ -39,7 +51,7 @@ void Console::displayMessage(custom_string message)
 
 void Console::update()
 {
-	switch (User::currentUser().getRole())
+	switch (User::getInstance().getRole())
 	{
 		case UserType::Unknown:
 			std::cout << ":";
@@ -58,7 +70,7 @@ void Console::update()
 	}
 	std::cin >> input;
 	buffer = input.split(' ');
-	User::currentUser().command(buffer[0]);
+	User::getInstance().command(buffer[0]);
 	freeBuffer();
 	input = "";
 }
