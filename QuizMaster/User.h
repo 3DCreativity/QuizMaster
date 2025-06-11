@@ -31,14 +31,14 @@ public:
 	static bool isUserDefined();
 	User();
 	User(custom_string username, UserType role, custom_string name, custom_string password);
-	User(custom_string template_text);
 	virtual ~User() = default;
 	UserType getRole();
 	custom_string getUsername();
 	custom_string getName();
-	virtual void command(custom_string input);
+	void command(custom_string input);
 	virtual void help();
+	void displayUserInfo();
 	virtual void exportUser(FileManager manager);
 	void quit();
-	// virtual custom_string exportUser();
-};/* code */
+	virtual bool dispatcher(custom_string input); //For Derived classes
+};

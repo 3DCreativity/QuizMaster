@@ -7,7 +7,7 @@ using namespace std;
 
 class custom_string {
 	private:
-		char* arr = nullptr;
+		char* arr;
 
 		void freeDynamic();
 		void copyFrom(const custom_string& other);

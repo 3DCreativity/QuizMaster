@@ -15,8 +15,8 @@ void custom_string::copyFrom(const custom_string& other)
 	}
 	size_t length = strlen(other.arr);
 	arr = new char[length + 1];
-	strncpy(arr,other.arr,length+1); // -> Linux
-	// strcpy_s(arr, length + 1, other.arr); //-> Windows
+	//strncpy(arr,other.arr,length+1); // -> Linux
+	 strcpy_s(arr, length + 1, other.arr); //-> Windows
 }
 
 custom_string::custom_string()
@@ -43,18 +43,19 @@ custom_string::custom_string(int num)
 		size++;
 	}
 	temp = num;
-	arr = new char[size + 1 + (int)negative];
+	size_t new_size = size + 1 + (int)negative;
+	arr = new char[new_size];
 	if (negative)
 	{
 		temp *= -1;
 		arr[0] = '-';
 	}
-	for (size_t i = negative; i < size; i++)
+	for (size_t i = negative; i < new_size - 1; i++)
 	{
 		arr[i] = '0' + temp % 10;
 		temp /= 10;
 	}
-	arr[size] = '\0';
+	arr[new_size - 1] = '\0';
 }
 
 custom_string::custom_string(const char* prov_string)
@@ -68,13 +69,14 @@ custom_string::custom_string(const char* prov_string)
 	{
 		size_t length = strlen(prov_string);
 		arr = new char[length + 1];
-		strncpy(arr,prov_string,length+1); // -> Linux
-		// strcpy_s(arr, length + 1, prov_string); // -> Windows
+		//strncpy(arr,prov_string,length+1); // -> Linux
+		 strcpy_s(arr, length + 1, prov_string); // -> Windows
 	}
 }
 
 custom_string::custom_string(const custom_string& other)
 {
+	arr = nullptr;
 	copyFrom(other);
 }
 
@@ -156,11 +158,20 @@ int custom_string::toInt()
 {
 	int result = 0;
 	size_t index = 0;
-	while (index != this->len() && !(this->arr[index] >= '0' && this->arr[index] <= '9'))
+	bool negative = this->arr[index] == '-';
+	if (negative)
+	{
+		index++;
+	}
+	while (index != this->len() && (this->arr[index] >= '0' && this->arr[index] <= '9'))
 	{
 		result *= 10;
-		result += '9' - this->arr[index];
+		result += this->arr[index]-'0';
 		index++;
+	}
+	if (negative)
+	{
+		result *= -1;
 	}
 	return result;
 }
@@ -171,25 +182,34 @@ double custom_string::toDouble()
 	double remainder = 0;
 	size_t remainder_len = 1;
 	size_t index = 0;
-	while (index != this->len() && !(this->arr[index] >= '0' && this->arr[index] <= '9'))
+	bool negative = this->arr[index] == '-';
+	if (negative)
+	{
+		index++;
+	}
+	while (index != this->len() && (this->arr[index] >= '0' && this->arr[index] <= '9'))
 	{
 		whole_num *= 10;
-		whole_num += '9' - this->arr[index];
+		whole_num += this->arr[index] - '0';
 		index++;
 	}
 	if (this->arr[index] == '.' || this->arr[index] == ',')
 	{
 		index++;
 	}
-	while (index != this->len() && !(this->arr[index] >= '0' && this->arr[index] <= '9'))
+	while (index != this->len() && (this->arr[index] >= '0' && this->arr[index] <= '9'))
 	{
 		remainder *= 10;
-		remainder += '9' - this->arr[index];
+		remainder += this->arr[index] - '0';
 		index++;
 		remainder_len*=10;
 	}
 	remainder = remainder / remainder_len;
 	whole_num += remainder;
+	if (negative)
+	{
+		whole_num *= -1;
+	}
 	return whole_num;
 }
 
@@ -229,10 +249,10 @@ custom_string& custom_string::operator+=(const custom_string& other)
 	
 	arr_mod[0] = '\0';
 
-	strncat(arr_mod,arr,length+1); // -> Linux
-	strncat(arr_mod,other.arr,length+1); // -> Linux
-	// strcat_s(arr_mod, length + 1, arr); // -> Windows
-	// strcat_s(arr_mod, length + 1, other.arr); // -> Windows
+	//strncat(arr_mod,arr,length+1); // -> Linux
+	//strncat(arr_mod,other.arr,length+1); // -> Linux
+	 strcat_s(arr_mod, length + 1, arr); // -> Windows
+	 strcat_s(arr_mod, length + 1, other.arr); // -> Windows
 
 	freeDynamic();
 	arr = arr_mod;
@@ -259,8 +279,8 @@ istream& operator>>(istream& in, custom_string& str)
 	str.freeDynamic();
 	str.arr = new char[buffer_length + 1];
 
-	strncpy(str.arr,buffer,buffer_length+1); // -> Linux
-	// strcpy_s(str.arr, buffer_length + 1, buffer); // -> Windows
+	//strncpy(str.arr,buffer,buffer_length+1); // -> Linux
+	 strcpy_s(str.arr, buffer_length + 1, buffer); // -> Windows
 
 	return in;
 }

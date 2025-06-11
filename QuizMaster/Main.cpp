@@ -4,6 +4,12 @@
 
 int main()
 {
+    Console::displayMessage(custom_string() +
+                            "Hello and Welcome to QuizMaster\n" +
+                            "The platform for creating and doing quizzes\n" +
+                            "acting as a social media for quizzes.\n\n" + 
+                            "For any questions, please consult an Administrator or the Manual.\n");
+    custom_string test = -1;
     while(true)
     {
         try

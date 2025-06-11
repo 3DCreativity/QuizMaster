@@ -105,4 +105,11 @@ public:
 
 		this->size_arr--;
 	}
+	
+	T pop()
+	{
+		T result = arr[0];
+		remove(0);
+		return result;
+	}
 };

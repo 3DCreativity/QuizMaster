@@ -26,8 +26,8 @@ void Console::freeBuffer()
 custom_string Console::prompt(custom_string message)
 {
 	custom_string input;
-	std::cout << message;
 	if (buffer.getSize() == 0) {
+		std::cout << message;
 		std::cin >> input;
 		buffer = input.split(' ');
 	}
@@ -70,7 +70,7 @@ void Console::update()
 	}
 	std::cin >> input;
 	buffer = input.split(' ');
-	User::getInstance().command(buffer[0]);
+	User::getInstance().command(buffer.pop());
 	freeBuffer();
 	input = "";
 }
