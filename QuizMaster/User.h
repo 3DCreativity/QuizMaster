@@ -23,6 +23,7 @@ protected:
 	This method also uses the vtables the way a normal function call would (experimented)
 	Source: https://isocpp.org/wiki/faq/pointers-to-members */
 	custom_hashmap<custom_string,void (User::*)()> command_list; 
+	custom_hashmap<custom_string,custom_string> command_help_list;
 	virtual void setCommandList();
 	void edit_user();
 	void logout();
@@ -36,7 +37,7 @@ public:
 	custom_string getUsername();
 	custom_string getName();
 	void command(custom_string input);
-	virtual void help();
+	void help();
 	void displayUserInfo();
 	virtual void exportUser(FileManager manager);
 	void quit();

@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\User.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|solutionrelative:User.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|solutionrelative:Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\User.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|solutionrelative:User.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\custom_hashmap.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|solutionrelative:custom_hashmap.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|solutionrelative:Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\Admin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|solutionrelative:Admin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\custom_string.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -23,35 +35,7 @@
       "RelativeMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|solutionrelative:custom_vector.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\custom_string.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|solutionrelative:custom_string.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\FileManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|solutionrelative:FileManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\User.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|solutionrelative:User.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\Console.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|solutionrelative:Console.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\UserType.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|solutionrelative:UserType.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\NormalExit.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|solutionrelative:NormalExit.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\crt\\src\\vcruntime\\delete_scalar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|solutionrelative:Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4BEE7603-B407-4E27-851D-656BDC93A33F}|QuizMaster.vcxproj|C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\FileManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -65,11 +49,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 0,
+              "Title": "User.h",
+              "DocumentMoniker": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\User.h",
+              "RelativeDocumentMoniker": "User.h",
+              "ToolTip": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\User.h",
+              "RelativeToolTip": "User.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-12T20:42:36.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\Player.cpp",
+              "RelativeDocumentMoniker": "Player.cpp",
+              "ToolTip": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\Player.cpp",
+              "RelativeToolTip": "Player.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-09T09:42:59.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Admin.cpp",
+              "DocumentMoniker": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\Admin.cpp",
+              "RelativeDocumentMoniker": "Admin.cpp",
+              "ToolTip": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\Admin.cpp",
+              "RelativeToolTip": "Admin.cpp",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAAcAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-09T09:42:32.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "delete_scalar.cpp",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\crt\\src\\vcruntime\\delete_scalar.cpp",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\crt\\src\\vcruntime\\delete_scalar.cpp",
@@ -77,12 +100,11 @@
               "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\crt\\src\\vcruntime\\delete_scalar.cpp",
               "ViewState": "AgIAABAAAAAAAAAAAAAEwBUAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-07T21:34:22.271Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T21:34:22.271Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 3,
               "Title": "Main.cpp",
               "DocumentMoniker": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\Main.cpp",
               "RelativeDocumentMoniker": "Main.cpp",
@@ -95,20 +117,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "User.cpp",
               "DocumentMoniker": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\User.cpp",
               "RelativeDocumentMoniker": "User.cpp",
               "ToolTip": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\User.cpp",
               "RelativeToolTip": "User.cpp",
-              "ViewState": "AgIAAJcAAAAAAAAAAAAAAEYAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAPwAAAAAAAAAAAAAAMIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-05T09:59:00.58Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 9,
               "Title": "FileManager.cpp",
               "DocumentMoniker": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\FileManager.cpp",
               "RelativeDocumentMoniker": "FileManager.cpp",
@@ -116,12 +138,11 @@
               "RelativeToolTip": "FileManager.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-07T18:21:59.922Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T18:21:59.922Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "custom_vector.hpp",
               "DocumentMoniker": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\custom_vector.hpp",
               "RelativeDocumentMoniker": "custom_vector.hpp",
@@ -129,12 +150,11 @@
               "RelativeToolTip": "custom_vector.hpp",
               "ViewState": "AgIAACIAAAAAAAAAAAAAAHAAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-05T09:59:00.019Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T09:59:00.019Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "custom_string.cpp",
               "DocumentMoniker": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\custom_string.cpp",
               "RelativeDocumentMoniker": "custom_string.cpp",
@@ -142,12 +162,11 @@
               "RelativeToolTip": "custom_string.cpp",
               "ViewState": "AgIAAE4AAAAAAAAAAAApwGAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-05T09:58:58.892Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T09:58:58.892Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Console.cpp",
               "DocumentMoniker": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\Console.cpp",
               "RelativeDocumentMoniker": "Console.cpp",
@@ -155,120 +174,7 @@
               "RelativeToolTip": "Console.cpp",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAB0AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-05T09:58:56.434Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "774d0602-4cb0-44ce-ac7e-1e4687ffc41e",
-        "Display": 1,
-        "X": 18,
-        "Y": 257,
-        "Width": 1907,
-        "Height": 684,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 4,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UserType.h",
-              "DocumentMoniker": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\UserType.h",
-              "RelativeDocumentMoniker": "UserType.h",
-              "ToolTip": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\UserType.h",
-              "RelativeToolTip": "UserType.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-05T09:59:01.551Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "User.h",
-              "DocumentMoniker": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\User.h",
-              "RelativeDocumentMoniker": "User.h",
-              "ToolTip": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\User.h",
-              "RelativeToolTip": "User.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-05T09:59:01.094Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FileManager.h",
-              "DocumentMoniker": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\FileManager.h",
-              "RelativeDocumentMoniker": "FileManager.h",
-              "ToolTip": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\FileManager.h",
-              "RelativeToolTip": "FileManager.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-07T18:22:20.935Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "custom_string.h",
-              "DocumentMoniker": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\custom_string.h",
-              "RelativeDocumentMoniker": "custom_string.h",
-              "ToolTip": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\custom_string.h",
-              "RelativeToolTip": "custom_string.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-05T09:58:59.451Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "custom_hashmap.hpp",
-              "DocumentMoniker": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\custom_hashmap.hpp",
-              "RelativeDocumentMoniker": "custom_hashmap.hpp",
-              "ToolTip": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\custom_hashmap.hpp",
-              "RelativeToolTip": "custom_hashmap.hpp",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-05T09:58:58.334Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Console.h",
-              "DocumentMoniker": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\Console.h",
-              "RelativeDocumentMoniker": "Console.h",
-              "ToolTip": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\Console.h",
-              "RelativeToolTip": "Console.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-05T09:58:57.061Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "NormalExit.hpp",
-              "DocumentMoniker": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\NormalExit.hpp",
-              "RelativeDocumentMoniker": "NormalExit.hpp",
-              "ToolTip": "C:\\Users\\huzun\\Documents\\GitHub_Repositories\\QuizMaster\\QuizMaster\\NormalExit.hpp",
-              "RelativeToolTip": "NormalExit.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-07T18:22:05.33Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T09:58:56.434Z"
             }
           ]
         }

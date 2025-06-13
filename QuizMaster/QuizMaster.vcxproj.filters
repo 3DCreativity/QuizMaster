@@ -36,6 +36,27 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Question.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Quiz.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TrueOrFalseQuestion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleChoiceQuestion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MultipleChoiceQuestion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShortAnswerQuestion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchingPairQuestions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Console.h">
@@ -66,6 +87,27 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Question.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Quiz.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TrueOrFalseQuestion.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleChoiceQuestion.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MultipleChoiceQuestion.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ShortAnswerQuestion.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchingPairQuestions.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

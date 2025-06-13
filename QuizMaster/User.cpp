@@ -1,4 +1,5 @@
 #include "User.h"
+#include "Admin.h"
 #include "Console.h"
 #include "UserType.h"
 #include "custom_vector.hpp"
@@ -86,14 +87,26 @@ void User::change_name()
 
 void User::login()
 {
-
+	delete User::instance;
+	User::instance = new Admin("admin","Administrator","123456");
 }
 
 void User::setCommandList() {
 	this->command_list.add("help",&User::help);
+	this->command_help_list.add("help",custom_string() + 
+	"help\t\t->\tDisplays context of all available commands");
+
 	this->command_list.add("quit",&User::quit);
+	this->command_help_list.add("quit",custom_string() + 
+	"quit\t\t->\tExits the program. If you are in the middle of something it will be available on next logon.");
+
 	this->command_list.add("whoami", &User::displayUserInfo);
-	this->command_list.add("edit_user", &User::edit_user);
+	this->command_help_list.add("whoami", custom_string() + 
+	"whoami <password_display>\t\t->\tDisplays all basic information about the currently logged on user. ");
+
+	this->command_list.add("edit-user", &User::edit_user);
+	this->command_help_list.add("edit-user",custom_string() +
+	"edit-user\t\t->\tEnters a menu meant to edit the currently logged on user data. On-screen instructions are provided.");
 }
 
 void User::edit_user()
@@ -128,8 +141,11 @@ void User::logout()
 {
 	if (User::instance->getRole() == UserType::Unknown)
 	{
+		//Function has been called without an actual user being logged in
 		throw new std::exception();
 	}
+	//saveUserState();	//All essential data is saved to the files
+	delete User::instance;	//Delete any loaded user data
 	User::instance = nullptr;
 }
 
@@ -196,7 +212,19 @@ void User::command(custom_string input)
 
 void User::help()
 {
-	Console::displayMessage("No commands are currently available\nSorry ;)");
+	const custom_string* keys = command_help_list.getKeys();
+	size_t help_size = command_help_list.getSize();
+	for(size_t i=0;i<help_size;i++)
+	{
+		try{
+			Console::displayMessage(command_help_list.getValue(keys[i]));
+		}
+		catch(std::invalid_argument e)
+		{
+			Console::displayMessage("Unable to retrieve command help info");
+			//TODO: Error management
+		}
+	}
 }
 
 void User::displayUserInfo()

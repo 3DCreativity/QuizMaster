@@ -12,7 +12,6 @@ protected:
 	void setCommandList() override;
 public:
 	Admin(custom_string username, custom_string name, custom_string password);
-	void help() override;
 	void exportUser(FileManager manager) override;
 	bool dispatcher(custom_string input) override;
 	void pending();
