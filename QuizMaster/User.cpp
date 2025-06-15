@@ -5,7 +5,9 @@
 #include "custom_vector.hpp"
 #include "NormalExit.hpp"
 #include <memory>
-#include <exception>
+#include <exception> 
+#include <fstream>
+
 
 User* User::instance = nullptr;
 
@@ -87,8 +89,44 @@ void User::change_name()
 
 void User::login()
 {
-	delete User::instance;
-	User::instance = new Admin("admin","Administrator","123456");
+	custom_string admin_pass = "123456";
+	custom_string admin_username = "admin";
+	custom_string player_pass = "qwerty";
+	custom_string player_username = "test-player";
+	
+	custom_string provided_username = Console::prompt("Enter your username: ");
+
+	//TODO: Replace with user.bin search for a username
+	if(provided_username != admin_username && provided_username != player_username)
+	{
+		Console::displayMessage("No user with said username found");
+		return;
+	}
+
+	custom_string provided_pass = Console::prompt_ignore_buffer("Enter your password: ");
+	if(provided_username == admin_username)
+	{
+		if(provided_pass == admin_pass)
+		{
+			delete User::instance;
+			User::instance = new Admin("admin","Administrator","123456");
+		}
+		else
+		{
+			Console::displayMessage("Invalid password");
+		}
+	}
+	else
+	{
+		if(provided_pass == player_pass)
+		{
+			Console::displayMessage("Sorry - Player is not implemented");
+		}
+		else
+		{
+			Console::displayMessage("Invalid password");
+		}
+	}
 }
 
 void User::setCommandList() {
@@ -107,6 +145,9 @@ void User::setCommandList() {
 	this->command_list.add("edit-user", &User::edit_user);
 	this->command_help_list.add("edit-user",custom_string() +
 	"edit-user\t\t->\tEnters a menu meant to edit the currently logged on user data. On-screen instructions are provided.");
+
+	this->command_list.add("login", &User::login);
+	this->command_help_list.add("login",custom_string() + "login\t\t->\tLogs a user into the system.");
 }
 
 void User::edit_user()
@@ -167,11 +208,11 @@ bool User::isUserDefined()
 	return true;
 }
 
-User::User(): role(UserType::Unknown),name("Undefined"),username("unknown"),password("") {
+User::User(): role(UserType::Unknown),name("Undefined"),username("unknown"),password(""),points(0) {
 	setCommandList();
 }
 
-User::User(custom_string username, UserType role, custom_string name, custom_string password) : role(role),name(name),username(username) {
+User::User(custom_string username, UserType role, custom_string name, custom_string password,double points) : role(role),name(name),username(username),points(points) {
 	setCommandList();
 	//Check password with regex
 }
@@ -252,9 +293,10 @@ void User::displayUserInfo()
 	}
 }
 
-void User::exportUser(FileManager manager)
+void User::exportUser()
 {
-	//Do nothing
+	//Saves the user data in users.bin
+	//
 }
 
 void User::quit()
@@ -266,4 +308,9 @@ void User::quit()
 bool User::dispatcher(custom_string input)
 {
 	return false;
+}
+
+void User::addPoints(double points)
+{
+	this->points += points;
 }

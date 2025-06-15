@@ -1,47 +1,62 @@
-#include "SingleChoiceQuestion.h"
-#include "Question.h"
-#include "custom_hashmap.hpp"
-#include "custom_string.h"
+#include "MatchingPairQuestion.h"
 #include "custom_vector.hpp"
+#include "custom_string.h"
 #include "Console.h"
+#include "Quiz.h"
 #include <fstream>
 
-
-SingleChoiceQuestion::SingleChoiceQuestion(custom_string title, custom_string description, bool answer, double points):Question()
+size_t MatchingPairQuestion::getAnswerCount()
 {
-    setTitle(title);
-    setDescription(description);
-    custom_vector<custom_string> choices;
-    choices.add("False");
-    choices.add("True");
-    setChoices(choices);
-    setAnswer((int)answer);
-    setPoints(points);
-    setAnswerSyntax("Answer syntax: <index>\nEnter your answer: ");
+    custom_vector<custom_string> pairs = user_answer.split(' ');
+    custom_vector<custom_string> correct_pairs = answer.split(' ');
+    size_t counter = 0;
+    for(size_t i=0;i<correct_pairs.getSize();i++)
+    {
+        if(pairs.findFirstMatch(correct_pairs[i]) != -1)
+        {
+            counter++;
+        }
+    }
+    return counter;
 }
 
-SingleChoiceQuestion::SingleChoiceQuestion(custom_string title, custom_string description, custom_vector<custom_string> choices, custom_string answer,double points):
-Question(title,description,choices,answer,points,"Answer syntax: <index>\nEnter your answer: ")
-{}
-
-SingleChoiceQuestion::SingleChoiceQuestion(custom_string title, custom_string description, custom_vector<custom_string> choices, custom_string answer,custom_string user_answer,double points):
-Question(title,description,choices,answer,user_answer,points,"Answer syntax: <index>\nEnter your answer: ")
-{}
-
-double SingleChoiceQuestion::calculatePoints()
+size_t MatchingPairQuestion::getCorrectAnswerCount()
 {
-    if(user_answer.split(' ')[0] == answer)
+    custom_vector<custom_string> pairs = answer.split(' ');
+    return pairs.getSize();
+}
+
+
+MatchingPairQuestion::MatchingPairQuestion(custom_string title, custom_string description, custom_vector<custom_string> questions, custom_string answers, double points,size_t column_separator):
+Question(title,description,questions,answer,points,"Answer syntax: <index>-<index> <index>-<index>...\nNote: The key SPACE is a separator. Be careful where you use it\n\nEnter your answer: "),column_separator(column_separator)
+{}
+
+MatchingPairQuestion::MatchingPairQuestion(custom_string title, custom_string description, custom_vector<custom_string> questions, custom_string answers, custom_string user_answer, double points,size_t column_separator):
+Question(title,description,questions,answer,user_answer,points,"Answer syntax: <index>-<index> <index>-<index>...\nNote: The key SPACE is a separator. Be careful where you use it\n\nEnter your answer: "),column_separator(column_separator)
+{}
+
+double MatchingPairQuestion::calculatePoints()
+{
+    size_t correct_answer_count = getCorrectAnswerCount();
+    size_t answer_count = getAnswerCount();
+    if(answer_count < correct_answer_count/2)
+    {
+        return 0;
+    }
+    else if (answer_count >= correct_answer_count/2 && answer_count != correct_answer_count)
+    {
+        return points/2;
+    }
+    else
     {
         return points;
     }
-    return 0;
 }
 
-
-void SingleChoiceQuestion::displayQuestion(bool revealAnswers)
+void MatchingPairQuestion::displayQuestion(bool revealAnswers)
 {
     Console::displayMessage(exportAsText());
-
+    
     if(revealAnswers)
     {
         Console::displayMessage("Answers:\n");
@@ -53,27 +68,40 @@ void SingleChoiceQuestion::displayQuestion(bool revealAnswers)
     }
 
     Console::displayMessage("\n");
-}
 
-custom_string SingleChoiceQuestion::exportAsText()
+}
+        
+custom_string MatchingPairQuestion::exportAsText()
 {
     custom_string result;
     result+=title + "\n";
     result+=description + "\n";
-    for(size_t i=0;i<choices.getSize();i++)
+    result+=custom_string() + "\nColumn 1\t|\tColumn2" + "\n";
+    for(size_t i=0;i<column_separator;i++)
     {
-        result+= custom_string((int)i) + " " + choices[i] + "\n";
+        if((i + column_separator)<choices.getSize())
+        {
+            result+= custom_string((int)i) + " " + choices[i] +
+             "\t|\t" + custom_string((int)(i + column_separator)) + choices[(i+column_separator)] + "\n";
+        }
+        else
+        {
+            result+=custom_string((int)i) + " " + choices[i] + "\t|\t" + "\n";
+        }
     }
-    
+    for(size_t i=2*column_separator;i<choices.getSize();i++)
+    {
+        result+="\t\t|\t" + custom_string((int) i) + " " + choices[i] + "\n";
+    }
 
     result+="\n\n";
 
     return result;
 }
 
-void SingleChoiceQuestion::exportQuestion(std::ofstream& file)
+void MatchingPairQuestion::exportQuestion(std::ofstream& file)
 {
-    int type = 2;
+    int type = 5;
     file.write(reinterpret_cast<const char*>(&type),sizeof(type));
 
     size_t title_len = title.len();
@@ -97,6 +125,9 @@ void SingleChoiceQuestion::exportQuestion(std::ofstream& file)
     size_t choices_count = choices.getSize();
     file.write(reinterpret_cast<const char*>(&choices_count),sizeof(choices_count));
 
+    file.write(reinterpret_cast<const char*>(&column_separator),sizeof(column_separator));
+    
+
     size_t choice_len;
     for(size_t i=0;i<choices_count;i++)
     {
@@ -106,13 +137,14 @@ void SingleChoiceQuestion::exportQuestion(std::ofstream& file)
     }
 }
 
-std::unique_ptr<Question> SingleChoiceQuestion::importQuestion(std::ifstream& file)
+std::unique_ptr<Question> MatchingPairQuestion::importQuestion(std::ifstream& file)
 {
     custom_string title;
     custom_string description;
     custom_vector<custom_string> choices;
     custom_string user_answer;
     custom_string answer;
+    size_t column_separator;
     double points;
 
     size_t len;
@@ -154,6 +186,7 @@ std::unique_ptr<Question> SingleChoiceQuestion::importQuestion(std::ifstream& fi
     size_t choices_count;
     file.read(reinterpret_cast<char*>(&choices_count),sizeof(choices_count));
 
+    file.read(reinterpret_cast<char*>(&column_separator),sizeof(column_separator));
 
     for(size_t i=0;i<choices_count;i++)
     {
@@ -166,5 +199,5 @@ std::unique_ptr<Question> SingleChoiceQuestion::importQuestion(std::ifstream& fi
         delete[] str;
     }
 
-    return std::make_unique<SingleChoiceQuestion>(title,description,choices,answer,user_answer,points);
+    return std::make_unique<MatchingPairQuestion>(title,description,choices,answer,user_answer,points,column_separator);
 }

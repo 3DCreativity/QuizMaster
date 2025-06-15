@@ -9,11 +9,12 @@
 class User
 {
 private:
-	static User* instance;
+	static User* instance; 
 	UserType role;
 	custom_string username;
 	custom_string name;
 	custom_string password;
+	double points;
 	void change_username();
 	void change_password();
 	void change_name();
@@ -31,7 +32,7 @@ public:
 	static User& getInstance();
 	static bool isUserDefined();
 	User();
-	User(custom_string username, UserType role, custom_string name, custom_string password);
+	User(custom_string username, UserType role, custom_string name, custom_string password,double points = 0);
 	virtual ~User() = default;
 	UserType getRole();
 	custom_string getUsername();
@@ -39,7 +40,8 @@ public:
 	void command(custom_string input);
 	void help();
 	void displayUserInfo();
-	virtual void exportUser(FileManager manager);
+	void exportUser();
 	void quit();
 	virtual bool dispatcher(custom_string input); //For Derived classes
+	void addPoints(double points);
 };

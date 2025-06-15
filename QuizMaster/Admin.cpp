@@ -5,22 +5,26 @@
 void Admin::setCommandList()
 {
 	this->command_list.add("help", &User::help);
+	this->command_help_list.add("help",custom_string() + "help\t\t->\tDisplays all information on available commands");
 	this->command_list.add("whoami", &User::displayUserInfo);
+	this->command_help_list.add("whoami",custom_string() + "whoami\t\t->\tDisplays the information about the current logged in user");
 	this->command_list.add("edit-user", &Admin::edit_user);
+	this->command_help_list.add("edit-user",custom_string() + "edit-user\t\t->\tEdits the user data of the currently loggeed in user");
 	this->admin_command_list.add("pending", &Admin::pending);
+	this->command_help_list.add("pending",custom_string() + "pending\t\t->\tDisplays the pending approval Quizzes");
 	this->admin_command_list.add("approve-quiz", &Admin::approve_quiz);
+	this->command_help_list.add("approve-quiz",custom_string() + "approve-quiz\t\t->\tApproves a Quiz");
 	this->admin_command_list.add("reject-quiz", &Admin::reject_quiz);
+	this->command_help_list.add("reject-quiz",custom_string() + "reject-quiz\t\t->\tRejects a Quiz");
 	this->admin_command_list.add("view-reports", &Admin::view_reports);
+	this->command_help_list.add("view-reports",custom_string() + "view-reports\t\t->\tDisplays all reports by Users");
 	this->admin_command_list.add("remove-quiz", &Admin::remove_quiz);
+	this->command_help_list.add("remove-quiz",custom_string() + "remove-quiz\t\t->\tRemoves a Quiz");
 	this->admin_command_list.add("ban", &Admin::ban);
+	this->command_help_list.add("ban",custom_string() + "ban\t\t->\tBans a User from using the system");
 }
 
 Admin::Admin(custom_string username, custom_string name, custom_string password) : User(username, UserType::Admin, name, password) {}
-
-void Admin::exportUser(FileManager manager)
-{
-
-}
 
 bool Admin::dispatcher(custom_string input)
 {
@@ -35,12 +39,12 @@ bool Admin::dispatcher(custom_string input)
 
 void Admin::pending()
 {
-
+	Console::displayMessage("This feature is unavailable at the moment");
 }
 
 void Admin::approve_quiz()
 {
-
+	Console::displayMessage("This feature is unavailable at the moment");
 }
 
 void Admin::reject_quiz()

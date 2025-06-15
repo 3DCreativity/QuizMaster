@@ -15,8 +15,8 @@ void custom_string::copyFrom(const custom_string& other)
 	}
 	size_t length = strlen(other.arr);
 	arr = new char[length + 1];
-	//strncpy(arr,other.arr,length+1); // -> Linux
-	 strcpy_s(arr, length + 1, other.arr); //-> Windows
+	strncpy(arr,other.arr,length+1); // -> Linux
+	//  strcpy_s(arr, length + 1, other.arr); //-> Windows
 }
 
 custom_string::custom_string()
@@ -69,8 +69,8 @@ custom_string::custom_string(const char* prov_string)
 	{
 		size_t length = strlen(prov_string);
 		arr = new char[length + 1];
-		//strncpy(arr,prov_string,length+1); // -> Linux
-		 strcpy_s(arr, length + 1, prov_string); // -> Windows
+		strncpy(arr,prov_string,length+1); // -> Linux
+		//  strcpy_s(arr, length + 1, prov_string); // -> Windows
 	}
 }
 
@@ -176,6 +176,7 @@ int custom_string::toInt()
 	return result;
 }
 
+//Not tested. Default use to toInt() for now
 double custom_string::toDouble()
 {
 	double whole_num = 0;
@@ -223,7 +224,7 @@ bool custom_string::toBool()
 	{
 		return false;
 	}
-	if (*this == "true" || *this == "TRUE")
+	if (*this == "true" || *this == "TRUE" || *this == "True")
 	{
 		return true;
 	}
@@ -249,10 +250,10 @@ custom_string& custom_string::operator+=(const custom_string& other)
 	
 	arr_mod[0] = '\0';
 
-	//strncat(arr_mod,arr,length+1); // -> Linux
-	//strncat(arr_mod,other.arr,length+1); // -> Linux
-	 strcat_s(arr_mod, length + 1, arr); // -> Windows
-	 strcat_s(arr_mod, length + 1, other.arr); // -> Windows
+	strncat(arr_mod,arr,length+1); // -> Linux
+	strncat(arr_mod,other.arr,length+1); // -> Linux
+	//  strcat_s(arr_mod, length + 1, arr); // -> Windows
+	//  strcat_s(arr_mod, length + 1, other.arr); // -> Windows
 
 	freeDynamic();
 	arr = arr_mod;
@@ -279,8 +280,8 @@ istream& operator>>(istream& in, custom_string& str)
 	str.freeDynamic();
 	str.arr = new char[buffer_length + 1];
 
-	//strncpy(str.arr,buffer,buffer_length+1); // -> Linux
-	 strcpy_s(str.arr, buffer_length + 1, buffer); // -> Windows
+	strncpy(str.arr,buffer,buffer_length+1); // -> Linux
+	//  strcpy_s(str.arr, buffer_length + 1, buffer); // -> Windows
 
 	return in;
 }
